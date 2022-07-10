@@ -1,0 +1,16 @@
+import { Injectable } from '@angular/core';
+import { Product } from './products';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class CartService {
+  items: Product[] = [];
+  constructor() {}
+
+  
+}
+
+/*
+1. command for service creation ng generate service cart
+*/
