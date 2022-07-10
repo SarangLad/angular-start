@@ -1,11 +1,23 @@
 <h2>Products</h2>
 <div *ngFor="let product of products">
   <h3>
-    <!-- Set the title to be the product's name  -->
-    <a [title]="product.name + ' details'">
+    <!-- Set the title to be the product's name  using property binding-->
+    <!-- The RouterLink directive helps you customize the anchor element. -->
+    <a
+      [title]="product.name + ' details'"
+      [routerLink]="['/products', product.id]"
+    >
       {{ product.name }}
     </a>
   </h3>
+  <p *ngIf="product.description">Description: {{ product.description }}</p>
+
+  <!-- Event binding uses -->
+  <button type="button" (click)="share()">Share</button>
+  <!-- @Input uses property binding syntax [] -->
+  <!-- @Output uses event binding syntax () -->
+  <app-product-alerts [product]="product" (notify)="onNotify()">
+  </app-product-alerts>
 </div>
 
 <!-- 
