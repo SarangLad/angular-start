@@ -1,7 +1,7 @@
-<p>product-details</p>
+<p>Product Details</p>
 <div *ngIf="product">
   <h3>{{ product.name }}</h3>
   <!-- uses the currency pipe to transform product.price from a number to a currency string -->
-  <h4>{{ product.price}}</h4>
+  <h4>{{ product.price | currency }}</h4>
   <p>{{ product.description }}</p>
 </div>
