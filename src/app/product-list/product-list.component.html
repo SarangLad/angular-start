@@ -2,7 +2,11 @@
 <div *ngFor="let product of products">
   <h3>
     <!-- Set the title to be the product's name  using property binding-->
-    <a [title]="product.name + ' details'">
+    <!-- The RouterLink directive helps you customize the anchor element. -->
+    <a
+      [title]="product.name + ' details'"
+      [routerLink]="['/products', product.id]"
+    >
       {{ product.name }}
     </a>
   </h3>
