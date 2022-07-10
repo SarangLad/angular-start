@@ -1,11 +1,15 @@
 <h2>Products</h2>
 <div *ngFor="let product of products">
   <h3>
-    <!-- Set the title to be the product's name  -->
+    <!-- Set the title to be the product's name  using property binding-->
     <a [title]="product.name + ' details'">
       {{ product.name }}
     </a>
   </h3>
+  <p *ngIf="product.description">Description: {{ product.description }}</p>
+
+  <!-- Event binding uses -->
+  <button type="button" (click)="share()">Share</button>
 </div>
 
 <!-- 
